@@ -491,7 +491,7 @@ namespace Цезарь____
                     string p = "";
                     for (int j = 0; j < 16; j++)
                     {
-                        p += ((int)k[i] + (int)binar_text[i * 16 + j]) % 2;
+                        p += ((int)k[j] + (int)binar_text[i * 16 + j]) % 2;
                     }
                     S += p;
                     k = p;
@@ -536,6 +536,20 @@ namespace Цезарь____
             }
             return binar;
         }
+        private string binar_to_string_8bit(string text)
+        {
+            string s = "";
+            for(int i =0;i<text.Length/8;i++)
+            {
+                string get_8_bit_to_symbol = "";
+                for(int j =0;j<8;j++)
+                {
+                    get_8_bit_to_symbol+= text[i*8 +j];
+                }
+                s += alf[binar_to_int(get_8_bit_to_symbol)];
+            }
+            return s;
+        }
         private string get_random_binar_key()
         {
             string binar_key = "";
@@ -562,6 +576,89 @@ namespace Цезарь____
             //
             return binar_key;
 
+        }
+        private void decrypt_AES()
+        {
+
+            try
+            {
+                richTextBox_decrypted_text_AES.Text = "";
+                int n = alf.Length;
+
+                if (n == 0) throw new Exception("Алфавит не выбран");
+
+
+                //
+                text = richTextBox_encrypted_text_AES.Text;
+                if (text.Length == 0) throw new Exception("Исходный текст пуст");
+                //
+                for (int i = 0; i < text.Length; i++)
+                    if (!string_in(text[i], alf)) throw new Exception("В тексте присутствует лишние символы ( другой язык, пробелы, знаки препинания, верхний регистр и т.д.)");
+                //
+
+
+                string binar_key = richTextBox_binar_key_AES.Text;
+                string binar_text = text;
+
+
+                //
+
+
+                
+
+
+                int num_of_blocks = binar_text.Length / 16;
+
+                ///
+
+
+                for (int i = num_of_blocks-1; i >0; i--)
+                {
+                    string p = "";
+                    for (int j = 0; j < 16; j++)
+                    {
+                        p += ((int)binar_text[i*16+j] + (int)binar_text[(i-1) * 16 + j]) % 2;
+                    }
+                    S += p;
+                    
+                }
+                for(int i =0;i<16;i++)
+                {
+                    S += ((int)binar_text[i] + (int)binar_key[i]) % 2;
+                }
+                //revers
+                string k = S;
+                
+
+                // 2 revers
+                S = binar_to_string_8bit(k);
+                k = "";
+                for(int i= S.Length-1;i>=0;i--)
+                {
+                    k += S[i];
+                }
+                S = "";
+                for(int i =0;i<k.Length/2;i++)
+                {
+                    for(int j = 1;j>=0; j--)
+                    {
+                        S += k[i * 2 + j];
+                    }
+                }
+                ///
+                richTextBox_decrypted_text_AES.Text = S;
+                S = "";
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Ошибка: {e.Message}");
+
+            }
+        }
+
+        private void button_decrypt_AES_Click(object sender, EventArgs e)
+        {
+            decrypt_AES();
         }
 
         //////

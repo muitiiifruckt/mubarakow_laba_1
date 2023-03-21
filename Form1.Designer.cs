@@ -75,6 +75,8 @@
             this.richTextBox10 = new System.Windows.Forms.RichTextBox();
             this.richTextBox9 = new System.Windows.Forms.RichTextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.button_decrypt_AES = new System.Windows.Forms.Button();
             this.button_encrypt_AES = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -85,8 +87,8 @@
             this.richTextBox_binar_key_AES = new System.Windows.Forms.RichTextBox();
             this.richTextBox_binar_text_AES = new System.Windows.Forms.RichTextBox();
             this.richTextBox_text_AES = new System.Windows.Forms.RichTextBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.richTextBox_decrypted_text_AES = new System.Windows.Forms.RichTextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -622,10 +624,12 @@
             this.tabPage4.Controls.Add(this.radioButton6);
             this.tabPage4.Controls.Add(this.button_decrypt_AES);
             this.tabPage4.Controls.Add(this.button_encrypt_AES);
+            this.tabPage4.Controls.Add(this.label20);
             this.tabPage4.Controls.Add(this.label19);
             this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.label17);
             this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Controls.Add(this.richTextBox_decrypted_text_AES);
             this.tabPage4.Controls.Add(this.richTextBox_encrypted_text_AES);
             this.tabPage4.Controls.Add(this.richTextBox_binar_key_AES);
             this.tabPage4.Controls.Add(this.richTextBox_binar_text_AES);
@@ -638,6 +642,36 @@
             this.tabPage4.Text = "AES";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // radioButton5
+            // 
+            this.radioButton5.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton5.Location = new System.Drawing.Point(482, 6);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(39, 28);
+            this.radioButton5.TabIndex = 23;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "RU";
+            this.radioButton5.UseVisualStyleBackColor = false;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.RU_CheckedChanged);
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.radioButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton6.Location = new System.Drawing.Point(527, 6);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(38, 28);
+            this.radioButton6.TabIndex = 24;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "EN";
+            this.radioButton6.UseVisualStyleBackColor = false;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.En_CheckedChanged);
+            // 
             // button_decrypt_AES
             // 
             this.button_decrypt_AES.Location = new System.Drawing.Point(549, 307);
@@ -646,6 +680,7 @@
             this.button_decrypt_AES.TabIndex = 2;
             this.button_decrypt_AES.Text = "Decrypt";
             this.button_decrypt_AES.UseVisualStyleBackColor = true;
+            this.button_decrypt_AES.Click += new System.EventHandler(this.button_decrypt_AES_Click);
             // 
             // button_encrypt_AES
             // 
@@ -725,35 +760,22 @@
             this.richTextBox_text_AES.TabIndex = 0;
             this.richTextBox_text_AES.Text = "";
             // 
-            // radioButton5
+            // richTextBox_decrypted_text_AES
             // 
-            this.radioButton5.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.radioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton5.Location = new System.Drawing.Point(482, 6);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(39, 28);
-            this.radioButton5.TabIndex = 23;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "RU";
-            this.radioButton5.UseVisualStyleBackColor = false;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.RU_CheckedChanged);
+            this.richTextBox_decrypted_text_AES.Location = new System.Drawing.Point(6, 330);
+            this.richTextBox_decrypted_text_AES.Name = "richTextBox_decrypted_text_AES";
+            this.richTextBox_decrypted_text_AES.Size = new System.Drawing.Size(380, 38);
+            this.richTextBox_decrypted_text_AES.TabIndex = 0;
+            this.richTextBox_decrypted_text_AES.Text = "";
             // 
-            // radioButton6
+            // label20
             // 
-            this.radioButton6.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.radioButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.radioButton6.Location = new System.Drawing.Point(527, 6);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(38, 28);
-            this.radioButton6.TabIndex = 24;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "EN";
-            this.radioButton6.UseVisualStyleBackColor = false;
-            this.radioButton6.CheckedChanged += new System.EventHandler(this.En_CheckedChanged);
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(392, 333);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(95, 16);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "decrypted_text";
             // 
             // Form1
             // 
@@ -839,6 +861,8 @@
         private System.Windows.Forms.Button button_decrypt_AES;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RichTextBox richTextBox_decrypted_text_AES;
+        private System.Windows.Forms.Label label20;
     }
 }
 
