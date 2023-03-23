@@ -649,7 +649,7 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(835, 473);
             this.tabPage4.TabIndex = 4;
-            this.tabPage4.Text = "AES";
+            this.tabPage4.Text = "\"AES\"";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // radioButton5
@@ -684,22 +684,26 @@
             // 
             // button_decrypt_AES
             // 
+            this.button_decrypt_AES.BackColor = System.Drawing.Color.Silver;
+            this.button_decrypt_AES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_decrypt_AES.Location = new System.Drawing.Point(549, 307);
             this.button_decrypt_AES.Name = "button_decrypt_AES";
             this.button_decrypt_AES.Size = new System.Drawing.Size(132, 23);
             this.button_decrypt_AES.TabIndex = 2;
             this.button_decrypt_AES.Text = "Decrypt";
-            this.button_decrypt_AES.UseVisualStyleBackColor = true;
+            this.button_decrypt_AES.UseVisualStyleBackColor = false;
             this.button_decrypt_AES.Click += new System.EventHandler(this.button_decrypt_AES_Click);
             // 
             // button_encrypt_AES
             // 
+            this.button_encrypt_AES.BackColor = System.Drawing.Color.Silver;
+            this.button_encrypt_AES.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_encrypt_AES.Location = new System.Drawing.Point(549, 137);
             this.button_encrypt_AES.Name = "button_encrypt_AES";
             this.button_encrypt_AES.Size = new System.Drawing.Size(132, 23);
             this.button_encrypt_AES.TabIndex = 2;
             this.button_encrypt_AES.Text = "Encrypt";
-            this.button_encrypt_AES.UseVisualStyleBackColor = true;
+            this.button_encrypt_AES.UseVisualStyleBackColor = false;
             this.button_encrypt_AES.Click += new System.EventHandler(this.button_encrypt_AES_Click);
             // 
             // label20
@@ -831,6 +835,8 @@
             // btn_run_euratocfen
             // 
             this.btn_run_euratocfen.BackColor = System.Drawing.Color.DarkGray;
+            this.btn_run_euratocfen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_run_euratocfen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_run_euratocfen.Location = new System.Drawing.Point(34, 381);
             this.btn_run_euratocfen.Name = "btn_run_euratocfen";
             this.btn_run_euratocfen.Size = new System.Drawing.Size(133, 28);

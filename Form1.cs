@@ -641,7 +641,7 @@ namespace Цезарь____
         private void btn_run_euratocfen_Click(object sender, EventArgs e)
         {
             int n = 10000;// maks number
-            int baza = 2;
+            int baza = 3;
             List<int> numbers_1 = new List<int> { };
             List<int> numbers_2 = new List<int> { };
 
@@ -694,14 +694,13 @@ namespace Цезарь____
 
                     if (numbers_1[i] < numbers_2[j])
                         break;
-
-
                 }
             }
             for (int i = 0; i < Pseudoprimes.Count; i++)
                 richTextBox_Pseudoprimes.Text += Pseudoprimes[i] + " ;";
 
         }
+
         //////
         ///
 
