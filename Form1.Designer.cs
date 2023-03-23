@@ -79,21 +79,30 @@
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.button_decrypt_AES = new System.Windows.Forms.Button();
             this.button_encrypt_AES = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.richTextBox_decrypted_text_AES = new System.Windows.Forms.RichTextBox();
             this.richTextBox_encrypted_text_AES = new System.Windows.Forms.RichTextBox();
             this.richTextBox_binar_key_AES = new System.Windows.Forms.RichTextBox();
             this.richTextBox_binar_text_AES = new System.Windows.Forms.RichTextBox();
             this.richTextBox_text_AES = new System.Windows.Forms.RichTextBox();
-            this.richTextBox_decrypted_text_AES = new System.Windows.Forms.RichTextBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.richTextBox1_Sieve_of_Eratosthenes = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_Ferma_theorem = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_Pseudoprimes = new System.Windows.Forms.RichTextBox();
+            this.btn_run_euratocfen = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -102,6 +111,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(2, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -692,6 +702,15 @@
             this.button_encrypt_AES.UseVisualStyleBackColor = true;
             this.button_encrypt_AES.Click += new System.EventHandler(this.button_encrypt_AES_Click);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(392, 333);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(95, 16);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "decrypted_text";
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -728,6 +747,14 @@
             this.label16.TabIndex = 1;
             this.label16.Text = "text";
             // 
+            // richTextBox_decrypted_text_AES
+            // 
+            this.richTextBox_decrypted_text_AES.Location = new System.Drawing.Point(6, 330);
+            this.richTextBox_decrypted_text_AES.Name = "richTextBox_decrypted_text_AES";
+            this.richTextBox_decrypted_text_AES.Size = new System.Drawing.Size(380, 38);
+            this.richTextBox_decrypted_text_AES.TabIndex = 0;
+            this.richTextBox_decrypted_text_AES.Text = "";
+            // 
             // richTextBox_encrypted_text_AES
             // 
             this.richTextBox_encrypted_text_AES.Location = new System.Drawing.Point(6, 261);
@@ -760,22 +787,84 @@
             this.richTextBox_text_AES.TabIndex = 0;
             this.richTextBox_text_AES.Text = "";
             // 
-            // richTextBox_decrypted_text_AES
+            // tabPage5
             // 
-            this.richTextBox_decrypted_text_AES.Location = new System.Drawing.Point(6, 330);
-            this.richTextBox_decrypted_text_AES.Name = "richTextBox_decrypted_text_AES";
-            this.richTextBox_decrypted_text_AES.Size = new System.Drawing.Size(380, 38);
-            this.richTextBox_decrypted_text_AES.TabIndex = 0;
-            this.richTextBox_decrypted_text_AES.Text = "";
+            this.tabPage5.Controls.Add(this.label23);
+            this.tabPage5.Controls.Add(this.label22);
+            this.tabPage5.Controls.Add(this.label21);
+            this.tabPage5.Controls.Add(this.btn_run_euratocfen);
+            this.tabPage5.Controls.Add(this.richTextBox_Pseudoprimes);
+            this.tabPage5.Controls.Add(this.richTextBox_Ferma_theorem);
+            this.tabPage5.Controls.Add(this.richTextBox1_Sieve_of_Eratosthenes);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(835, 473);
+            this.tabPage5.TabIndex = 5;
+            this.tabPage5.Text = "Решето Эратосфена";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label20
+            // richTextBox1_Sieve_of_Eratosthenes
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(392, 333);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(95, 16);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "decrypted_text";
+            this.richTextBox1_Sieve_of_Eratosthenes.Location = new System.Drawing.Point(34, 31);
+            this.richTextBox1_Sieve_of_Eratosthenes.Name = "richTextBox1_Sieve_of_Eratosthenes";
+            this.richTextBox1_Sieve_of_Eratosthenes.Size = new System.Drawing.Size(771, 96);
+            this.richTextBox1_Sieve_of_Eratosthenes.TabIndex = 0;
+            this.richTextBox1_Sieve_of_Eratosthenes.Text = "";
+            // 
+            // richTextBox_Ferma_theorem
+            // 
+            this.richTextBox_Ferma_theorem.Location = new System.Drawing.Point(34, 148);
+            this.richTextBox_Ferma_theorem.Name = "richTextBox_Ferma_theorem";
+            this.richTextBox_Ferma_theorem.Size = new System.Drawing.Size(771, 96);
+            this.richTextBox_Ferma_theorem.TabIndex = 0;
+            this.richTextBox_Ferma_theorem.Text = "";
+            // 
+            // richTextBox_Pseudoprimes
+            // 
+            this.richTextBox_Pseudoprimes.Location = new System.Drawing.Point(34, 267);
+            this.richTextBox_Pseudoprimes.Name = "richTextBox_Pseudoprimes";
+            this.richTextBox_Pseudoprimes.Size = new System.Drawing.Size(771, 96);
+            this.richTextBox_Pseudoprimes.TabIndex = 0;
+            this.richTextBox_Pseudoprimes.Text = "";
+            // 
+            // btn_run_euratocfen
+            // 
+            this.btn_run_euratocfen.BackColor = System.Drawing.Color.DarkGray;
+            this.btn_run_euratocfen.Location = new System.Drawing.Point(34, 381);
+            this.btn_run_euratocfen.Name = "btn_run_euratocfen";
+            this.btn_run_euratocfen.Size = new System.Drawing.Size(133, 28);
+            this.btn_run_euratocfen.TabIndex = 1;
+            this.btn_run_euratocfen.Text = "run";
+            this.btn_run_euratocfen.UseVisualStyleBackColor = false;
+            this.btn_run_euratocfen.Click += new System.EventHandler(this.btn_run_euratocfen_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(31, 12);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(138, 16);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Sieve of Eratosthenes";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(31, 130);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(318, 16);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Random numbers found using Fermat\'s little theorem";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(31, 247);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(95, 16);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Pseudoprimes";
             // 
             // Form1
             // 
@@ -796,6 +885,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -863,6 +954,14 @@
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RichTextBox richTextBox_decrypted_text_AES;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button btn_run_euratocfen;
+        private System.Windows.Forms.RichTextBox richTextBox_Pseudoprimes;
+        private System.Windows.Forms.RichTextBox richTextBox_Ferma_theorem;
+        private System.Windows.Forms.RichTextBox richTextBox1_Sieve_of_Eratosthenes;
     }
 }
 

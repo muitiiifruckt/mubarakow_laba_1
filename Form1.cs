@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -22,7 +23,6 @@ namespace Цезарь____
         {
             InitializeComponent();
         }
-
         public bool string_in(char a, string s) // функция, которая проверяет наличие того или иного элемента в алфавите 
         {
             for (int i = 0; i < s.Length; i++)
@@ -36,13 +36,10 @@ namespace Цезарь____
         {
             alf = "abcdefghijklmnopqrstuvwxyz0123456789";
         }
-
         private void RU_CheckedChanged(object sender, EventArgs e)
         {
             alf = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя0123456789";
-        }
-
-       
+        }    
         private void Encryption(string alf,string key)
         {
             try
@@ -131,13 +128,11 @@ namespace Цезарь____
                 
             }
         }
-
         private void encryption_Click(object sender, EventArgs e)
         {
             key = richTextBox2.Text;
             Encryption(alf,key);
         }
-
         private void decryption_Click(object sender, EventArgs e)
         {
             key = richTextBox2.Text;
@@ -218,17 +213,11 @@ namespace Цезарь____
 
             }
         }
-
-       
-       
-
-
         private void vishener_encr_btn_Click(object sender, EventArgs e)
         {
             key = richTextBox7.Text;
             Encryption_V(alf, key);
         }
-
         private void V_decrypt_btn_Click(object sender, EventArgs e)
         {
             key = richTextBox7.Text;
@@ -284,8 +273,6 @@ namespace Цезарь____
             }
             return a;
         }
-
-        
         private void encrypt_XOR(string alf, string key)
         {
             try
@@ -414,17 +401,11 @@ namespace Цезарь____
 
             }
         }
-
-
-
-
         private void Gamn_decrypt_btn_Click(object sender, EventArgs e)
         {
             key = richTextBox11.Text;
             decrypt_XOR(alf, key);
         }
-
-        
         /// <summary>
         /// //
         /// </summary>
@@ -461,7 +442,7 @@ namespace Цезарь____
 
 
                 if (text.Length % 2 != 0)
-                    text += "a";
+                    text += alf[0];
                 richTextBox_text_AES.Text = text; 
                 binar_text = string_to_binar_text_8bit(text);
 
@@ -595,18 +576,9 @@ namespace Цезарь____
                 for (int i = 0; i < text.Length; i++)
                     if (!string_in(text[i], alf)) throw new Exception("В тексте присутствует лишние символы ( другой язык, пробелы, знаки препинания, верхний регистр и т.д.)");
                 //
-
-
                 string binar_key = richTextBox_binar_key_AES.Text;
                 string binar_text = text;
-
-
                 //
-
-
-                
-
-
                 int num_of_blocks = binar_text.Length / 16;
 
                 ///
@@ -626,11 +598,13 @@ namespace Цезарь____
                 {
                     S += ((int)binar_text[i] + (int)binar_key[i]) % 2;
                 }
-                //revers
+                
+
+                //
                 string k = S;
                 
 
-                // 2 revers
+                ////// 2 revers
                 S = binar_to_string_8bit(k);
                 k = "";
                 for(int i= S.Length-1;i>=0;i--)
@@ -645,7 +619,7 @@ namespace Цезарь____
                         S += k[i * 2 + j];
                     }
                 }
-                ///
+                ///////
                 richTextBox_decrypted_text_AES.Text = S;
                 S = "";
             }
@@ -655,12 +629,79 @@ namespace Цезарь____
 
             }
         }
-
         private void button_decrypt_AES_Click(object sender, EventArgs e)
         {
             decrypt_AES();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_run_euratocfen_Click(object sender, EventArgs e)
+        {
+            int n = 10000;// maks number
+            int baza = 2;
+            List<int> numbers_1 = new List<int> { };
+            List<int> numbers_2 = new List<int> { };
 
+            Eratosfen(ref numbers_1,n);
+            Theorem_small_Ferma(ref numbers_2,baza ,n);
+            Find_and_print_Pseudoprimes(numbers_1,numbers_2);
+        }
+        private void Eratosfen(ref List<int> numbers_1,int n)
+        {
+            for (int i =0;i<n;i++)
+                numbers_1.Add(i);
+            ///
+            for (int i = 2; i < numbers_1.Count; i++)
+                for (int j = i+1; j > i && j < numbers_1.Count; j++)
+                    if (numbers_1[j] % i == 0)
+                    { numbers_1.RemoveAt(j); j--; }
+                        
+            for (int i = 0; i < numbers_1.Count; i++)
+                richTextBox1_Sieve_of_Eratosthenes.Text += numbers_1[i] +" ;";
+        }
+        private void Theorem_small_Ferma(ref List<int> numbers_2,int baza,int n)
+        {
+            BigInteger a = baza;
+            for(int p = 2; p < n; p++)
+            {
+                if (a % p == 1)
+                    numbers_2.Add(p);
+                a = a * baza;
+            }
+
+            for (int i = 0; i < numbers_2.Count; i++)
+                richTextBox_Ferma_theorem.Text += numbers_2[i] + " ;";
+
+        }
+        private void Find_and_print_Pseudoprimes(List<int> numbers_1, List<int> numbers_2)
+        {
+            List<int> Pseudoprimes = new List<int>();
+            Pseudoprimes = numbers_2;
+
+            int j = 0;
+            for(int i =0; i< numbers_1.Count;i++)
+            {
+                for(;j<numbers_2.Count;j++)
+                {
+                    if (numbers_1[i] == numbers_2[j])
+                    {
+                        Pseudoprimes.Remove(numbers_2[j]);
+                        break;
+                    }
+
+                    if (numbers_1[i] < numbers_2[j])
+                        break;
+
+
+                }
+            }
+            for (int i = 0; i < Pseudoprimes.Count; i++)
+                richTextBox_Pseudoprimes.Text += Pseudoprimes[i] + " ;";
+
+        }
         //////
         ///
 
