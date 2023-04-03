@@ -640,18 +640,18 @@ namespace Цезарь____
         /// <param name="e"></param>
         private void btn_run_euratocfen_Click(object sender, EventArgs e)
         {
-            int n = 10000;// maks number
-            int baza = 3;
+            int n = 100000;// maks number
+            int baza = 2;
             List<int> numbers_1 = new List<int> { };
             List<int> numbers_2 = new List<int> { };
 
-            Eratosfen(ref numbers_1,n);
+            //Eratosfen(ref numbers_1,n);
             Theorem_small_Ferma(ref numbers_2,baza ,n);
-            Find_and_print_Pseudoprimes(numbers_1,numbers_2);
+            //Find_and_print_Pseudoprimes(numbers_1,numbers_2);
         }
         private void Eratosfen(ref List<int> numbers_1,int n)
         {
-            for (int i =0;i<n;i++)
+            for (int i =2;i<n;i++)
                 numbers_1.Add(i);
             ///
             for (int i = 2; i < numbers_1.Count; i++)
@@ -662,14 +662,29 @@ namespace Цезарь____
             for (int i = 0; i < numbers_1.Count; i++)
                 richTextBox1_Sieve_of_Eratosthenes.Text += numbers_1[i] +" ;";
         }
+        public static int GetNODModul(int val1, int val2)
+        {
+            while ((val1 != 0) && (val2 != 0))
+            {
+                if (val1 > val2)
+                    val1 %= val2;
+                else
+                    val2 %= val1;
+            }
+            return Math.Max(val1, val2);
+        }
         private void Theorem_small_Ferma(ref List<int> numbers_2,int baza,int n)
         {
             BigInteger a = baza;
             for(int p = 2; p < n; p++)
             {
-                if (a % p == 1)
-                    numbers_2.Add(p);
-                a = a * baza;
+                if (p%2!=0 && GetNODModul(2, p)== 1)    
+                {
+                    if (a % p == 1)
+                        numbers_2.Add(p);
+                }
+                a *= baza;
+
             }
 
             for (int i = 0; i < numbers_2.Count; i++)

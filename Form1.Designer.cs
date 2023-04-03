@@ -90,13 +90,13 @@
             this.richTextBox_binar_text_AES = new System.Windows.Forms.RichTextBox();
             this.richTextBox_text_AES = new System.Windows.Forms.RichTextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.richTextBox1_Sieve_of_Eratosthenes = new System.Windows.Forms.RichTextBox();
-            this.richTextBox_Ferma_theorem = new System.Windows.Forms.RichTextBox();
-            this.richTextBox_Pseudoprimes = new System.Windows.Forms.RichTextBox();
-            this.btn_run_euratocfen = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.btn_run_euratocfen = new System.Windows.Forms.Button();
+            this.richTextBox_Pseudoprimes = new System.Windows.Forms.RichTextBox();
+            this.richTextBox_Ferma_theorem = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1_Sieve_of_Eratosthenes = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -808,29 +808,32 @@
             this.tabPage5.Text = "Решето Эратосфена";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1_Sieve_of_Eratosthenes
+            // label23
             // 
-            this.richTextBox1_Sieve_of_Eratosthenes.Location = new System.Drawing.Point(34, 31);
-            this.richTextBox1_Sieve_of_Eratosthenes.Name = "richTextBox1_Sieve_of_Eratosthenes";
-            this.richTextBox1_Sieve_of_Eratosthenes.Size = new System.Drawing.Size(771, 96);
-            this.richTextBox1_Sieve_of_Eratosthenes.TabIndex = 0;
-            this.richTextBox1_Sieve_of_Eratosthenes.Text = "";
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(31, 247);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(95, 16);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Pseudoprimes";
             // 
-            // richTextBox_Ferma_theorem
+            // label22
             // 
-            this.richTextBox_Ferma_theorem.Location = new System.Drawing.Point(34, 148);
-            this.richTextBox_Ferma_theorem.Name = "richTextBox_Ferma_theorem";
-            this.richTextBox_Ferma_theorem.Size = new System.Drawing.Size(771, 96);
-            this.richTextBox_Ferma_theorem.TabIndex = 0;
-            this.richTextBox_Ferma_theorem.Text = "";
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(31, 130);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(266, 16);
+            this.label22.TabIndex = 2;
+            this.label22.Text = " numbers found using Fermat\'s little theorem";
             // 
-            // richTextBox_Pseudoprimes
+            // label21
             // 
-            this.richTextBox_Pseudoprimes.Location = new System.Drawing.Point(34, 267);
-            this.richTextBox_Pseudoprimes.Name = "richTextBox_Pseudoprimes";
-            this.richTextBox_Pseudoprimes.Size = new System.Drawing.Size(771, 96);
-            this.richTextBox_Pseudoprimes.TabIndex = 0;
-            this.richTextBox_Pseudoprimes.Text = "";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(31, 12);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(138, 16);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Sieve of Eratosthenes";
             // 
             // btn_run_euratocfen
             // 
@@ -845,32 +848,29 @@
             this.btn_run_euratocfen.UseVisualStyleBackColor = false;
             this.btn_run_euratocfen.Click += new System.EventHandler(this.btn_run_euratocfen_Click);
             // 
-            // label21
+            // richTextBox_Pseudoprimes
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(31, 12);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(138, 16);
-            this.label21.TabIndex = 2;
-            this.label21.Text = "Sieve of Eratosthenes";
+            this.richTextBox_Pseudoprimes.Location = new System.Drawing.Point(34, 267);
+            this.richTextBox_Pseudoprimes.Name = "richTextBox_Pseudoprimes";
+            this.richTextBox_Pseudoprimes.Size = new System.Drawing.Size(771, 96);
+            this.richTextBox_Pseudoprimes.TabIndex = 0;
+            this.richTextBox_Pseudoprimes.Text = "";
             // 
-            // label22
+            // richTextBox_Ferma_theorem
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(31, 130);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(318, 16);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "Random numbers found using Fermat\'s little theorem";
+            this.richTextBox_Ferma_theorem.Location = new System.Drawing.Point(34, 148);
+            this.richTextBox_Ferma_theorem.Name = "richTextBox_Ferma_theorem";
+            this.richTextBox_Ferma_theorem.Size = new System.Drawing.Size(771, 96);
+            this.richTextBox_Ferma_theorem.TabIndex = 0;
+            this.richTextBox_Ferma_theorem.Text = "";
             // 
-            // label23
+            // richTextBox1_Sieve_of_Eratosthenes
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(31, 247);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(95, 16);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Pseudoprimes";
+            this.richTextBox1_Sieve_of_Eratosthenes.Location = new System.Drawing.Point(34, 31);
+            this.richTextBox1_Sieve_of_Eratosthenes.Name = "richTextBox1_Sieve_of_Eratosthenes";
+            this.richTextBox1_Sieve_of_Eratosthenes.Size = new System.Drawing.Size(771, 96);
+            this.richTextBox1_Sieve_of_Eratosthenes.TabIndex = 0;
+            this.richTextBox1_Sieve_of_Eratosthenes.Text = "";
             // 
             // Form1
             // 
